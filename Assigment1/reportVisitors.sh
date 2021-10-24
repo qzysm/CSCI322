@@ -10,4 +10,4 @@ users=`echo $visitorGroup | cut -d ':' -f 4`
 results=`echo $users | tr , \\n`
 
 ## Dump results into visitors.txt
-$results > /tmp/visitors.txt
+echo $results > /tmp/visitors.txt
