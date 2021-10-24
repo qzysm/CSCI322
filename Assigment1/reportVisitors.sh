@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Get the list of users in visitor group
-visitorGroup=`cat /etc/groups | grep visitor`
+visitorGroup=`cat /etc/group | grep visitor`
 
 ## Remove the Group details but splitting by ':' delim and extract users
 users=`echo $visitorGroup | cut -d ':' -f 4`
