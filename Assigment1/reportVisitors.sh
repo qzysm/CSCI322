@@ -6,6 +6,6 @@ visitorGroup=`cat /etc/group | grep visitor`
 ## Remove the Group details but splitting by ':' delim and extract users
 users=`echo $visitorGroup | cut -d ':' -f 4`
 
+## Replace comma delimeter with \\n so that each user is seperated by a new line
 ## Dump results into visitors.txt
-IFS=',' read -ra user <<< $users
-printf '%s\n' "$user[@]" > /tmp/visitors.txt
+echo $users | tr , \\n > /tmp/visitors.txt
