@@ -10,7 +10,7 @@ logger Parsing Usernames.txt to create Users
 while IFS="," read -r username group; do
     logger Creating User $username and adding to Group $group
     sudo useradd $username -m -s /bin/bash -G $group
-    echo "$username" | passwd --stdin $username
+    echo "$username\n$username" | passwd $username
 done < 'Usernames.txt'
 unset IFS
 
